@@ -1,30 +1,22 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="min-h-screen bg-slate-200 flex flex-col align-middle">
+    <h3 class="font-serif text-2xl text-center my-6 underline">To Do List</h3>
+    <div class="w-full flex justify-center">
+      <input type="text" class="w-96 px-3 py-2 rounded-lg border-black" placeholder="your to do list...">
+      <button class="mx-4 px-4 py-1 bg-[#60A5FA] bg-opacity-90 rounded-lg text-white active:bg-[#3B82F6]">Add</button>
+    </div>
+    <div class="w-full flex justify-center pt-16">
+      <div class="w-7/12 flex justify-between">
+        <p class="bg-orange-400 opacity-50">somthing tedfg</p>
+        <div>
+          <button class="mx-2 px-4 py-1 rounded-lg bg-[#A7F3D0]">Done</button>
+          <button class="mx-2 px-4 py-1 rounded-lg bg-[#F9A8D4]">Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+
+</script>

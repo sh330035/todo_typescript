@@ -11,9 +11,9 @@
       <div 
       v-for="(item, index) in todoList"
       class="w-1/2 my-4 flex justify-between ">
-        <p class="bg-orange-400 opacity-50">{{item.title}}</p>
+        <p class="content bg-orange-400 opacity-50 w-10" :class="{'line-through': item.is_completed}">{{item.title}}</p>
         <div>
-          <button class="mx-2 px-4 py-1 rounded-lg bg-[#A7F3D0]">Done</button>
+          <button @click="doneTodoList(index)" class="mx-2 px-4 py-1 rounded-lg bg-[#A7F3D0]">Done</button>
           <button @click="deleteTodoList(index)" class="mx-2 px-4 py-1 rounded-lg bg-[#F9A8D4]">Delete</button>
         </div>
       </div>
@@ -67,6 +67,12 @@ const addTodoList = () =>{
 
 const deleteTodoList = (index: number) =>{
   todoList.value.splice(index, 1)
+}
+
+const doneTodoList = (index: number) => {
+  todoList.value[index].is_completed = !todoList.value[index].is_completed
+
+  todoList.value = todoListSort(todoList.value)
 }
 
 </script>
